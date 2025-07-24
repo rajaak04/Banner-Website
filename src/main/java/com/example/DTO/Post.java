@@ -22,8 +22,8 @@ public void setFilename(String filename) {
 	this.filename = filename;
 }
 @Lob
-@Column(columnDefinition = "LONGBLOB")
-byte[] poster_image;
+@Column(name = "poster_image", columnDefinition = "BYTEA")
+byte[] posterImage;
 public String getBase64() {
 	return base64;
 }
@@ -55,11 +55,12 @@ public void setUsername(String username) {
 	this.username = username;
 }
 
-public byte[] getPoster_image() {
-	return poster_image;
+
+public byte[] getPosterImage() {
+	return posterImage;
 }
-public void setPoster_image(byte[] poster_image) {
-	this.poster_image = poster_image;
+public void setPosterImage(byte[] posterImage) {
+	this.posterImage = posterImage;
 }
 public String getDescription() {
 	return description;
