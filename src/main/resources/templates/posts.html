@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Facebook App</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+	<style>
+		#download{
+			text-decoration:none;
+			color: black;
+			
+		}
+	</style>
+		
+</head>
+<body>
+<div class="container mt-4">
+    <h1 class="text-center mb-4">Cricketers Posters</h1>
+    <div class="row">
+        <!-- Thymeleaf loop to display posts in card view -->
+        <div class="col-md-3 mb-4" th:each="post : ${post}">
+            <div class="card" >
+				
+                <img th:src="'data:'+${post.Contenttype} + ';base64,' + ${post.base64}" height="400" width="300" class="card-img-top" alt="Poster Image">
+              <div class="card-body">
+                    <h5 class="card-title" th:text="${post.username}">Username</h5>
+                    <p class="card-text" th:text="${post.description}">Description</p>
+					<a th:href="'data:' + ${post.Contenttype} + ';base64,' + ${post.base64}"
+					               th:download="${post.filename}" class="btn btn-success" style="position: relative; top: -70px; left:187px;">
+					               ⬇️ 
+					            </a>
+                    <div class="d-flex justify-content-between align-items-center">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- Bootstrap JS (Optional) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
