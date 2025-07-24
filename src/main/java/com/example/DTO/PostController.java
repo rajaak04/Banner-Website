@@ -57,6 +57,12 @@ public class PostController {
    
    
    
+   @GetMapping("/upload")
+   public String gotoUpload() {
+	   return "file";
+   }
+   
+   
    
    
    @PostMapping("/submit")

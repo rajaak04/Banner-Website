@@ -24,7 +24,7 @@ public void setFilename(String filename) {
 	this.filename = filename;
 }
 @Lob
-@Column(columnDefinition = "BYTEA")
+@Column(name="poster_image",  columnDefinition = "BYTEA")
 byte[] posterImage;
 public String getBase64() {
 	return base64;
