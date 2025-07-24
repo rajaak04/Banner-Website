@@ -27,8 +27,8 @@ public class PostController {
 	   PostDTO postdto=new PostDTO();
 	   List<Post> posting=repository.findAll();
 	   for(Post post:posting) {
-		   if(post.getPoster_image()!=null) {
-			   String base64=Base64.getEncoder().encodeToString(post.getPoster_image());
+		   if(post.getPosterImage()!=null) {
+			   String base64=Base64.getEncoder().encodeToString(post.getPosterImage());
 			   post.setBase64(base64);
 			   postdto.setBase64(base64);
 		   }

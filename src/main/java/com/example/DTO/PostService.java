@@ -37,7 +37,7 @@ public class PostService {
 		post.setUsername(username);
 		post.setDescription(description);
 		
-		post.setPoster_image(file.getBytes());
+		post.setPosterImage(file.getBytes());
 		post.setContenttype(file.getContentType());
 		String base64=Base64.getEncoder().encodeToString(file.getBytes());
 		post.setFilename(file.getOriginalFilename());

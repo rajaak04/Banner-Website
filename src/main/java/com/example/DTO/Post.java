@@ -6,9 +6,11 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Lob;
+import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
 
 @Entity
+@Table(name = "post")
 public class Post {
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,7 +24,7 @@ public void setFilename(String filename) {
 	this.filename = filename;
 }
 @Lob
-@Column(name = "poster_image", columnDefinition = "BYTEA")
+@Column(columnDefinition = "BYTEA")
 byte[] posterImage;
 public String getBase64() {
 	return base64;
