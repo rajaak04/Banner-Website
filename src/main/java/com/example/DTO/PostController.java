@@ -49,7 +49,7 @@ public class PostController {
    
    
    
-   @GetMapping("/upload")
+   @GetMapping
    public String goUpload() {
 	   return "file";
 	   
